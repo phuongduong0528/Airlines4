@@ -30,20 +30,20 @@ namespace Airlines.Services
         public List<List<SurveyResult>> ResultByDate(int month, int year)
         {
             List<List<SurveyResult>> results = new List<List<SurveyResult>>();
-            results.Add(_surveyResultAdaptor.Q1(AirlineManager.GetResultByDate(month, year)));
-            results.Add(_surveyResultAdaptor.Q2(AirlineManager.GetResultByDate(month, year)));
-            results.Add(_surveyResultAdaptor.Q3(AirlineManager.GetResultByDate(month, year)));
-            results.Add(_surveyResultAdaptor.Q4(AirlineManager.GetResultByDate(month, year)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q1(AirlineManager.GetResultByDate(month, year)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q2(AirlineManager.GetResultByDate(month, year)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q3(AirlineManager.GetResultByDate(month, year)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q4(AirlineManager.GetResultByDate(month, year)));
             return results;
         }
 
         public List<List<SurveyResult>> ResultFilter(int month, int year, int gender, int age)
         {
             List<List<SurveyResult>> results = new List<List<SurveyResult>>();
-            results.Add(_surveyResultAdaptor.Q1(AirlineManager.GetResultFilter(month, year, gender, age)));
-            results.Add(_surveyResultAdaptor.Q2(AirlineManager.GetResultFilter(month, year, gender, age)));
-            results.Add(_surveyResultAdaptor.Q3(AirlineManager.GetResultFilter(month, year, gender, age)));
-            results.Add(_surveyResultAdaptor.Q4(AirlineManager.GetResultFilter(month, year, gender, age)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q1(AirlineManager.GetResultFilter(month, year, gender, age)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q2(AirlineManager.GetResultFilter(month, year, gender, age)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q3(AirlineManager.GetResultFilter(month, year, gender, age)));
+            results.Add(_surveyResultAdaptor.GetListSurveyResult_Q4(AirlineManager.GetResultFilter(month, year, gender, age)));
             return results;
         }
     }

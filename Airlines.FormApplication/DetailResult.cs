@@ -23,7 +23,7 @@ namespace Airlines.FormApplication
             list = new List<List<SurveyResult>>();
         }
 
-        public void LoadData(Chart chart,List<SurveyResult> l)
+        public void LoadData(Chart chart,List<SurveyResult> surveyResults)
         {
             Series series;
             double total = 0;
@@ -31,7 +31,7 @@ namespace Airlines.FormApplication
             double percent_item;
 
             chart.Series.Clear();
-            foreach(SurveyResult sr in l)
+            foreach(SurveyResult sr in surveyResults)
             {
                 total += (double)sr.All;
             }
@@ -41,7 +41,7 @@ namespace Airlines.FormApplication
                     percent_item = 100 - percent_total;
                 else
                 {
-                    percent_item = (l[i].All / total) * 100;
+                    percent_item = (surveyResults[i].All / total) * 100;
                 }
                 percent_total += percent_item;
                 series = chart.Series.Add($"Mark {i + 1}");
@@ -49,7 +49,7 @@ namespace Airlines.FormApplication
                 series.Points.Add(new DataPoint()
                 {
                     YValues = new[] {percent_item},
-                    ToolTip = $"{l[i].All} - {percent_item:F1}%"
+                    ToolTip = $"{surveyResults[i].All} - {percent_item:F1}%"
                 });
             }
         }

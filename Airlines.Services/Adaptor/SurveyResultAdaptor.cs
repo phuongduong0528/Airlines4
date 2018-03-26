@@ -39,7 +39,7 @@ namespace Airlines.Services.Adaptor
             return s;
         }
 
-        public SurveyResult GetSurveyResult_1(List<Airline> a, int score)
+        public SurveyResult GetSurveyResult_Q1(List<Airline> a, int score)
         {
             SurveyResult s = new SurveyResult();
             s.All = a.Where(x => x.q1 == score).Count();
@@ -60,7 +60,7 @@ namespace Airlines.Services.Adaptor
             return s;
         }
 
-        public SurveyResult GetSurveyResult_2(List<Airline> a, int score)
+        public SurveyResult GetSurveyResult_Q2(List<Airline> a, int score)
         {
             SurveyResult s = new SurveyResult();
             s.All = a.Where(x => x.q2 == score).Count();
@@ -81,7 +81,7 @@ namespace Airlines.Services.Adaptor
             return s;
         }
 
-        public SurveyResult GetSurveyResult_3(List<Airline> a, int score)
+        public SurveyResult GetSurveyResult_Q3(List<Airline> a, int score)
         {
             SurveyResult s = new SurveyResult();
             s.All = a.Where(x => x.q3 == score).Count();
@@ -102,7 +102,7 @@ namespace Airlines.Services.Adaptor
             return s;
         }
 
-        public SurveyResult GetSurveyResult_4(List<Airline> a, int score)
+        public SurveyResult GetSurveyResult_Q4(List<Airline> a, int score)
         {
             SurveyResult s = new SurveyResult();
             s.All = a.Where(x => x.q4 == score).Count();
@@ -123,42 +123,42 @@ namespace Airlines.Services.Adaptor
             return s;
         }
 
-        public List<SurveyResult> Q1(List<Airline> a)
+        public List<SurveyResult> GetListSurveyResult_Q1(List<Airline> a)
         {
             List<SurveyResult> results = new List<SurveyResult>();
             for(int i = 1; i <= 7; i++)
             {
-                results.Add(GetSurveyResult_1(a, i));
+                results.Add(GetSurveyResult_Q1(a, i));
             }
             return results;
         }
 
-        public List<SurveyResult> Q2(List<Airline> a)
+        public List<SurveyResult> GetListSurveyResult_Q2(List<Airline> a)
         {
             List<SurveyResult> results = new List<SurveyResult>();
             for (int i = 1; i <= 7; i++)
             {
-                results.Add(GetSurveyResult_2(a, i));
+                results.Add(GetSurveyResult_Q2(a, i));
             }
             return results;
         }
 
-        public List<SurveyResult> Q3(List<Airline> a)
+        public List<SurveyResult> GetListSurveyResult_Q3(List<Airline> a)
         {
             List<SurveyResult> results = new List<SurveyResult>();
             for (int i = 1; i <= 7; i++)
             {
-                results.Add(GetSurveyResult_3(a, i));
+                results.Add(GetSurveyResult_Q3(a, i));
             }
             return results;
         }
 
-        public List<SurveyResult> Q4(List<Airline> a)
+        public List<SurveyResult> GetListSurveyResult_Q4(List<Airline> a)
         {
             List<SurveyResult> results = new List<SurveyResult>();
             for (int i = 1; i <= 7; i++)
             {
-                results.Add(GetSurveyResult_4(a, i));
+                results.Add(GetSurveyResult_Q4(a, i));
             }
             return results;
         }
